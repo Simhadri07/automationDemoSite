@@ -11,57 +11,46 @@
     <h1>UI Automation Practice</h1>
   </header>
   <main>
-    <div class="element-container">
+    <div class="container">
       <h2>Interactive Elements</h2>
-      <ul>
-        <li>
-          <span>Heading (h1):</span>
-          <h1 id="heading1">This is a heading</h1>
-          <button data-target="heading1">Change Text</button>
-        </li>
-        <li>
-          <span>Paragraph (p):</span>
-          <p id="paragraph1">This is a paragraph.</p>
-          <button data-target="paragraph1">Change Text</button>
-        </li>
-        <li>
-          <span>Link (a):</span>
-          <a href="#" id="link1">Click me</a>
-          <button data-target="link1">Change Text</button>
-        </li>
-        <li>
-          <span>Image (img):</span>
-          <img src="image.png" alt="Image" id="image1">
-          <button data-target="image1">Change Image</button>
-        </li>
-        <li>
-          <span>List (ul):</span>
-          <ul id="list1">
-            <li>Item 1</li>
-            <li>Item 2</li>
-          </ul>
-          <button data-target="list1">Add Item</button>
-        </li>
-        <li>
-          <span>Table (table):</span>
-          <table id="table1">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Age</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>John Doe</td>
-                <td>30</td>
-              </tr>
-            </tbody>
-          </table>
-          <button data-target="table1">Add Row</button>
-        </li>
-        </ul>
-    </div>
+      <div class="element-group">
+        <h3>Text Input</h3>
+        <input type="text" id="text-input" placeholder="Enter your text here">
+        <button data-target="text-input">Clear</button>
+      </div>
+      <div class="element-group">
+        <h3>Login Form</h3>
+        <form id="login-form">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Username">
+          <br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Password">
+          <br>
+          <button type="submit">Login</button>
+        </form>
+        <div id="login-message"></div>
+      </div>
+      <div class="element-group">
+        <h3>Dropdown Menu</h3>
+        <select id="dropdown-menu">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+        <button data-target="dropdown-menu">Select Option 2</button>
+      </div>
+      <div class="element-group">
+        <h3>Checkbox & Radio Buttons</h3>
+        <input type="checkbox" id="checkbox1" name="checkbox">
+        <label for="checkbox1">Checkbox 1</label><br>
+        <input type="radio" id="radio1" name="radio-group" value="radio1">
+        <label for="radio1">Radio Button 1</label><br>
+        <input type="radio" id="radio2" name="radio-group" value="radio2">
+        <label for="radio2">Radio Button 2</label>
+        <button data-target="radio-group">Select Radio 2</button>
+      </div>
+      </div>
   </main>
   <script src="script.js"></script>
 </body>
