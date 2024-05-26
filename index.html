@@ -4,128 +4,195 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automation Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"],
+        select,
+        textarea,
+        input[type="submit"],
+        input[type="reset"],
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        select:focus,
+        textarea:focus,
+        input[type="submit"]:focus,
+        input[type="reset"]:focus,
+        button:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+        button,
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover,
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #0056b3;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Automation Demo Web UI</h1>
+    <div class="container">
+        <h1>Automation Demo Web UI</h1>
 
-    <!-- Button -->
-    <button id="btnSubmit">Submit</button>
+        <label for="txtUsername">Username:</label>
+        <input type="text" id="txtUsername" placeholder="Enter your username">
 
-    <!-- Text Input -->
-    <input type="text" id="txtUsername" placeholder="Username">
+        <label for="txtPassword">Password:</label>
+        <input type="password" id="txtPassword" placeholder="Enter your password">
 
-    <!-- Password Input -->
-    <input type="password" id="txtPassword" placeholder="Password">
+        <label for="ddlOptions">Options:</label>
+        <select id="ddlOptions">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select>
 
-    <!-- Dropdown Select -->
-    <select id="ddlOptions">
-        <option value="option1">Option 1</option>
-        <option value="option2">Option 2</option>
-        <option value="option3">Option 3</option>
-    </select>
+        <input type="checkbox" id="chkOption1">
+        <label for="chkOption1">Option 1</label>
 
-    <!-- Checkbox -->
-    <input type="checkbox" id="chkOption1">
-    <label for="chkOption1">Option 1</label>
+        <div>
+            <input type="radio" name="gender" id="radMale" value="male">
+            <label for="radMale">Male</label>
+            
+            <input type="radio" name="gender" id="radFemale" value="female">
+            <label for="radFemale">Female</label>
+        </div>
 
-    <!-- Radio Buttons -->
-    <input type="radio" name="gender" id="radMale" value="male">
-    <label for="radMale">Male</label>
-    
-    <input type="radio" name="gender" id="radFemale" value="female">
-    <label for="radFemale">Female</label>
+        <button type="submit" id="submitBtn">Submit</button>
 
-    <!-- Submit Button -->
-    <input type="submit" value="Submit" id="submitBtn">
+        <input type="reset" id="resetBtn" value="Reset">
 
-    <!-- Reset Button -->
-    <input type="reset" value="Reset" id="resetBtn">
+        <a href="https://example.com" id="anchorLink">Example Link</a>
 
-    <!-- Anchor Link -->
-    <a href="https://example.com" id="anchorLink">Example Link</a>
+        <img src="https://via.placeholder.com/150" alt="Placeholder Image" id="placeholderImg">
 
-    <!-- Image -->
-    <img src="https://via.placeholder.com/150" alt="Placeholder Image" id="placeholderImg">
+        <label for="txtArea">Comments:</label>
+        <textarea id="txtArea" rows="4" cols="50" placeholder="Enter your comments"></textarea>
 
-    <!-- Text Area -->
-    <textarea id="txtArea" rows="4" cols="50">Enter text here...</textarea>
+        <input type="checkbox" id="chkOption2">
+        <label for="chkOption2">Option 2</label>
+        
+        <input type="checkbox" id="chkOption3">
+        <label for="chkOption3">Option 3</label>
 
-    <!-- Checkboxes -->
-    <input type="checkbox" id="chkOption2">
-    <label for="chkOption2">Option 2</label>
-    
-    <input type="checkbox" id="chkOption3">
-    <label for="chkOption3">Option 3</label>
+        <div>
+            <input type="radio" name="gender" id="radOther" value="other">
+            <label for="radOther">Other</label>
+        </div>
 
-    <!-- Radio Buttons -->
-    <input type="radio" name="gender" id="radOther" value="other">
-    <label for="radOther">Other</label>
+        <label for="rangeInput">Progress:</label>
+        <input type="range" id="rangeInput" min="0" max="100" value="50">
 
-    <!-- Range Input -->
-    <input type="range" id="rangeInput" min="0" max="100" value="50">
+        <label for="colorInput">Color:</label>
+        <input type="color" id="colorInput" value="#ff0000">
 
-    <!-- Color Input -->
-    <input type="color" id="colorInput" value="#ff0000">
+        <label for="dateInput">Date:</label>
+        <input type="date" id="dateInput">
 
-    <!-- Date Input -->
-    <input type="date" id="dateInput">
+        <label for="timeInput">Time:</label>
+        <input type="time" id="timeInput">
 
-    <!-- Time Input -->
-    <input type="time" id="timeInput">
+        <label for="emailInput">Email:</label>
+        <input type="email" id="emailInput" placeholder="example@example.com">
 
-    <!-- Email Input -->
-    <input type="email" id="emailInput" placeholder="example@example.com">
+        <label for="urlInput">URL:</label>
+        <input type="url" id="urlInput" placeholder="https://example.com">
 
-    <!-- URL Input -->
-    <input type="url" id="urlInput" placeholder="https://example.com">
+        <label for="numberInput">Number:</label>
+        <input type="number" id="numberInput" min="0" max="100" step="1" value="50">
 
-    <!-- Number Input -->
-    <input type="number" id="numberInput" min="0" max="100" step="1" value="50">
+        <label for="fileInput">File:</label>
+        <input type="file" id="fileInput">
 
-    <!-- File Input -->
-    <input type="file" id="fileInput">
+        <input type="hidden" id="hiddenInput" value="hidden_value">
 
-    <!-- Hidden Input -->
-    <input type="hidden" id="hiddenInput" value="hidden_value">
+        <label for="diskSpace">Disk Space:</label>
+        <meter id="diskSpace" value="75" min="0" max="100">75%</meter>
 
-    <!-- Meter -->
-    <meter id="diskSpace" value="75" min="0" max="100">75%</meter>
+        <label for="fileProgress">File Progress:</label>
+        <progress id="fileProgress" value="50" max="100">50%</progress>
 
-    <!-- Progress -->
-    <progress id="fileProgress" value="50" max="100">50%</progress>
+        <label for="rangeInput">Output:</label>
+        <output for="rangeInput" id="output">50</output>
 
-    <!-- Output -->
-    <output for="rangeInput" id="output"></output>
+        <details>
+            <summary>Details</summary>
+            <p>This is a details element</p>
+        </details>
 
-    <!-- Details -->
-    <details>
-        <summary>Details</summary>
-        <p>This is a details element</p>
-    </details>
+        <fieldset>
+            <legend>Fieldset</legend>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+        </fieldset>
 
-    <!-- Fieldset and Legend -->
-    <fieldset>
-        <legend>Fieldset</legend>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email"><br><br>
-    </fieldset>
+        <iframe src="https://www.example.com" id="iframe"></iframe>
 
-    <!-- Iframe -->
-    <iframe src="https://www.example.com" id="iframe"></iframe>
+        <audio controls id="audioPlayer">
+            <source src="audio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
 
-    <!-- Audio -->
-    <audio controls id="audioPlayer">
-        <source src="audio.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-
-    <!-- Video -->
-    <video controls id="videoPlayer">
-        <source src="video.mp4" type="video/mp4">
-        Your browser does not support the video element.
-    </video>
+        <video controls id="videoPlayer">
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video element.
+        </video>
+    </div>
 </body>
 </html>
+
 
