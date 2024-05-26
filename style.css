@@ -4,91 +4,114 @@ body {
 }
 
 header {
-  background-color: #f0f0f0;
-  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-h1 {
-  text-align: center;
+header h1 {
+  font-size: 2em;
 }
 
 main {
   display: flex;
-  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .container {
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 600px; /* Adjust width for optimal layout on different screens */
-  margin: 0 auto; /* Center the container horizontally */
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.container h2 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.element-group {
+.element {
   margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  width: calc(33% - 20px); /* Adjust for spacing between elements */
 }
 
-.element-group h3 {
-  margin-bottom: 5px;
-}
-
-label {
+.element span {
+  font-weight: bold;
   display: block;
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="password"] {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-  box-sizing: border-box; /* Ensures input width includes padding */
-}
-
-select {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-button {
+.element button {
   padding: 5px 10px;
-  background-color: #4CAF50; /* Green */
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 5px; /* Add some margin for better spacing */
-}
-
-button:hover {
-  background-color: #45A049; /* Green hover */
-}
-
-.alert-box {
-  padding: 10px;
   border: 1px solid #ddd;
-  border-radius: 4px;
-  margin-top: 10px;
-  width: 250px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-/* Media Queries for Responsive Design (Adjust as needed) */
-@media (max-width: 768px) {
-  .container {
-    width: 90%;
-  }
+.element form {
+  margin-bottom: 10px;
+}
 
-  .element-group {
-    margin-bottom: 15px;
-  }
+.element label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.element .progress-bar {
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.element .progress {
+  height: 100%;
+  background-color: #007bff;
+  transition: width 0.5s ease-in-out;
+}
+
+.element table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.element table th,
+.element table td {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: left;
+}
+
+/* Alerts (hidden by default) */
+.alert {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.alert.show {
+  opacity: 1;
+}
+
+.alert.success {
+  background-color: #dff0d8;
+  color: #46b8da;
+}
+
+.alert.error {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+.alert.info {
+  background-color: #d7eefe;
+  color: #20c997;
+}
+
+.alert.warning {
+  background-color: #fcf8e3;
+  color: #8a6f4a;
 }
