@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Automation Demo</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 20px;
             background-color: #f9f9f9;
@@ -22,6 +23,7 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             padding: 30px;
             box-sizing: border-box;
+            position: relative;
         }
         h1 {
             text-align: center;
@@ -32,6 +34,7 @@
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
+            color: #555;
         }
         input[type="text"],
         input[type="password"],
@@ -80,6 +83,22 @@
         a:hover {
             color: #0056b3;
         }
+        .icon {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        .submit-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .reset-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
     </style>
 </head>
 <body>
@@ -110,9 +129,9 @@
             <label for="radFemale">Female</label>
         </div>
 
-        <button type="submit" id="submitBtn">Submit</button>
+        <button type="submit" id="submitBtn"><span class="material-icons icon submit-icon">send</span>Submit</button>
 
-        <input type="reset" id="resetBtn" value="Reset">
+        <input type="reset" id="resetBtn" value="Reset"><span class="material-icons icon reset-icon">refresh</span>
 
         <a href="https://example.com" id="anchorLink">Example Link</a>
 
@@ -194,5 +213,6 @@
     </div>
 </body>
 </html>
+
 
 
