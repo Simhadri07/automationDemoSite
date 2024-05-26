@@ -12,12 +12,13 @@
   </header>
   <main>
     <div class="container">
-      <div class="element-group">
-        <h3>Text Input</h3>
+      <div class="element">
+        <span>Text Input:</span>
         <input type="text" id="text-input" placeholder="Enter your text here">
         <button data-target="text-input">Clear</button>
       </div>
-      <div class="element-group">
+
+      <div class="element">
         <h3>Login Form</h3>
         <form id="login-form">
           <label for="username">Username:</label>
@@ -34,8 +35,9 @@
         </form>
         <div id="login-message"></div>
       </div>
-      <div class="element-group">
-        <h3>Dropdown Menu</h3>
+
+      <div class="element">
+        <span>Dropdown Menu:</span>
         <select id="dropdown-menu">
           <option value="option1">Option 1</option>
           <option value="option2">Option 2</option>
@@ -43,35 +45,62 @@
         </select>
         <button data-target="dropdown-menu">Select Option 2</button>
       </div>
-      <div class="element-group">
-        <h3>Radio Buttons</h3>
+
+      <div class="element">
+        <span>Radio Buttons:</span>
         <input type="radio" id="radio1" name="radio-group" value="radio1">
         <label for="radio1">Radio Button 1</label><br>
         <input type="radio" id="radio2" name="radio-group" value="radio2">
         <label for="radio2">Radio Button 2</label>
         <button data-target="radio-group">Select Radio 2</button>
       </div>
-      <div class="element-group">
-        <h3>Checkbox</h3>
+
+      <div class="element">
+        <span>Checkbox:</span>
         <label for="agree">
           <input type="checkbox" id="agree" name="agree"> I agree to terms and conditions
         </label>
       </div>
-      <div class="element-group">
-        <h3>Alert</h3>
-        <button id="show-alert">Show Alert</button>
+
+      <div class="element">
+        <h3>Alerts:</h3>
+        <button class="alert-button" data-alert-type="success">Success Alert</button>
+        <button class="alert-button" data-alert-type="error">Error Alert</button>
+        <button class="alert-button" data-alert-type="info">Info Alert</button>
+        <button class="alert-button" data-alert-type="warning">Warning Alert</button>
       </div>
-      <div class="element-group">
-        <h3>File Upload</h3>
-        <input type="file" id="file-upload">
+
+      <div class="element">
+        <h3>Clock:</h3>
+        <span id="clock"></span>
       </div>
-      <div class="element-group">
-        <h3>Captcha (Placeholder)</h3>
-        <p>Captcha integration example coming soon!</p>
+
+      <div class="element">
+        <h3>Date Picker (Placeholder):</h3>
+        <p>Date picker integration example coming soon!</p>
       </div>
-      <div class="element-group">
-        <h3>New Window (Placeholder)</h3>
-        <button id="open-new-window">Open New Window</button>
+
+      <div class="element">
+        <h3>Progress Bar:</h3>
+        <div class="progress-bar">
+          <div class="progress" id="progress"></div>
+        </div>
+        <button id="update-progress">Update Progress</button>
+      </div>
+
+      <div class="element">
+        <h3>Table:</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>City</th>
+            </tr>
+          </thead>
+          <tbody>
+            </tbody>
+        </table>
       </div>
     </div>
   </main>
