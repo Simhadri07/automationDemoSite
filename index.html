@@ -1,220 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automation Demo Site - Made by simhadri07</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
-        }
+To make the website responsive and work well on both mobile and desktop devices, you can add some CSS to adjust the layout based on the screen size. I'll update the existing code with some basic responsive CSS styles:
+
+```html
+
+
+
+
+
+Interactive Website
+
+    /* CSS for colorful UI */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    button, input, select, textarea {
+        padding: 10px;
+        margin: 5px;
+        border: none;
+        border-radius: 5px;
+        background-color: #3498db;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+    }
+    button:hover, input:hover, select:hover, textarea:hover {
+        background-color: #2980b9;
+    }
+    @media (min-width: 768px) {
         .container {
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .form-container {
             max-width: 600px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            padding: 30px;
-            box-sizing: border-box;
-            margin: 0 auto;
         }
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #007bff;
-            text-transform: uppercase;
-        }
-        .section {
-            margin-bottom: 30px;
-        }
-        .section-title {
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: #007bff;
-            text-transform: uppercase;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #555;
-        }
-        input[type="text"],
-        input[type="password"],
-        select,
-        textarea,
-        input[type="submit"],
-        input[type="reset"],
-        button {
-            width: calc(100% - 20px);
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-            transition: border-color 0.3s ease;
-            font-size: 16px;
-        }
-        input[type="text"]:focus,
-        input[type="password"]:focus,
-        select:focus,
-        textarea:focus,
-        input[type="submit"]:focus,
-        input[type="reset"]:focus,
-        button:focus {
-            outline: none;
-            border-color: #007bff;
-        }
-        button,
-        input[type="submit"],
-        input[type="reset"] {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        button:hover,
-        input[type="submit"]:hover,
-        input[type="reset"]:hover {
-            background-color: #0056b3;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        a:hover {
-            color: #0056b3;
-        }
-        .icon {
-            margin-right: 5px;
-            vertical-align: middle;
-        }
-        .submit-icon,
-        .reset-icon {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+    }
 
-        /* Responsive styles */
-        @media (max-width: 768px) {
-            input[type="text"],
-            input[type="password"],
-            select,
-            textarea,
-            input[type="submit"],
-            input[type="reset"],
-            button {
-                width: 100%;
-            }
-            .submit-icon,
-            .reset-icon {
-                display: none;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="form-container">
-            <h1>Automation Demo Site</h1>
 
-            <div class="section">
-                <h2 class="section-title">Text Fields</h2>
-                <label for="txtField1">Text Field 1:</label>
-                <input type="text" id="txtField1" placeholder="Enter text here">
 
-                <label for="txtField2">Text Field 2:</label>
-                <input type="text" id="txtField2" placeholder="Enter text here">
-            </div>
 
-            <div class="section">
-                <h2 class="section-title">Password Fields</h2>
-                <label for="txtPassword1">Password Field 1:</label>
-                <input type="password" id="txtPassword1" placeholder="Enter password here">
+    Interactive Elements
+    
+        Name:
+        
+        
+        Email:
+        
+        
+        Phone Number:
+        
+        
+        Favorite Color:
+        
+            Red
+            Green
+            Blue
+        
+        
+        Interests:
+        
+            Music
+            Sports
+            Travel
+        
+        
+        Comments:
+        
+        
+        
+        I agree to the terms and conditions
+        
+        Submit
+    
 
-                <label for="txtPassword2">Password Field 2:</label>
-                <input type="password" id="txtPassword2" placeholder="Enter password here">
-            </div>
 
-            <div class="section">
-                <h2 class="section-title">Dropdowns</h2>
-                <label for="ddlDropdown1">Dropdown 1:</label>
-                <select id="ddlDropdown1">
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
 
-                <label for="ddlDropdown2">Dropdown 2:</label>
-                <select id="ddlDropdown2">
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                </select>
-            </div>
+    // JavaScript for interactivity
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const color = document.getElementById('color').value;
+        const interests = Array.from(document.getElementById('interests').selectedOptions).map(option => option.value);
+        const comments = document.getElementById('comments').value;
+        const agree = document.getElementById('agree').checked ? 'Agreed' : 'Not Agreed';
+        alert(`Name: ${name}\nEmail: ${email}\nPhone Number: ${phone}\nFavorite Color: ${color}\nInterests: ${interests.join(', ')}\nComments: ${comments}\nTerms and Conditions: ${agree}`);
+    });
 
-            <div class="section">
-                <h2 class="section-title">Checkboxes</h2>
-                <label><input type="checkbox" name="checkbox1"> Checkbox 1 - Check me</label><br>
-                <label><input type="checkbox" name="checkbox2"> Checkbox 2 - Check me</label><br>
-            </div>
 
-            <div class="section">
-                <h2 class="section-title">Radio Buttons</h2>
-                <label><input type="radio" name="radioGroup"> Radio 1 - Select me</label><br>
-                <label><input type="radio" name="radioGroup"> Radio 2 - Select me</label><br>
-            </div>
 
-            <div class="section">
-                <h2 class="section-title">Textarea</h2>
-                <label for="txtArea">Textarea:</label>
-                <textarea id="txtArea" rows="4" cols="50" placeholder="Enter your comments here"></textarea>
-            </div>
+```
 
-            <div class="section">
-                <h2 class="section-title">Email Input</h2>
-                <label for="emailInput">Email:</label>
-                <input type="email" id="emailInput" placeholder="Enter your email here">
-            </div>
-
-            <button type="submit" id="submitBtn" onclick="openPopup()"><span class="material-icons icon submit-icon">send</span>Submit</button>
-
-            <input type="reset" id="resetBtn" value="Reset"><span class="material-icons icon reset-icon">refresh</span>
-        </div>
-    </div>
-
-    <!-- Popup Window -->
-    <div id="popupWindow">
-        <div class="popup-content">
-            <h2 class="popup-title">Popup Window</h2>
-            <p style="text-align: center;">This is a popup window. You can handle it with Selenium.</p>
-            <button class="popup-btn" onclick="closePopup()">Close</button>
-        </div>
-    </div>
-
-    <script>
-        function openPopup() {
-            document.getElementById("popupWindow").style.display = "block";
-        }
-
-        function closePopup() {
-            document.getElementById("popupWindow").style.display = "none";
-        }
-    </script>
-</body>
-</html>
+This updated code includes some basic responsive CSS that adjusts the container width on screens larger than 768px. You can further enhance the responsiveness based on your requirements. Feel free to test this code on both mobile and desktop devices and let me know if you need any more assistance!
