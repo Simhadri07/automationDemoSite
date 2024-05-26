@@ -21,7 +21,8 @@ main {
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 600px;
+  width: 600px; /* Adjust width for optimal layout on different screens */
+  margin: 0 auto; /* Center the container horizontally */
 }
 
 .container h2 {
@@ -48,6 +49,7 @@ input[type="password"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
+  box-sizing: border-box; /* Ensures input width includes padding */
 }
 
 select {
@@ -55,6 +57,7 @@ select {
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 button {
@@ -62,4 +65,30 @@ button {
   background-color: #4CAF50; /* Green */
   color: white;
   border: none;
-  border
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px; /* Add some margin for better spacing */
+}
+
+button:hover {
+  background-color: #45A049; /* Green hover */
+}
+
+.alert-box {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-top: 10px;
+  width: 250px;
+}
+
+/* Media Queries for Responsive Design (Adjust as needed) */
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  .element-group {
+    margin-bottom: 15px;
+  }
+}
