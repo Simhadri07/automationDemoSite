@@ -13,9 +13,13 @@ const clockElement = document.getElementById('clock');
 const progressBar = document.getElementById('progress');
 const updateProgressButton = document.getElementById('update-progress');
 
-// Text Input Clearing
+// Text Input Clearing (with animation)
 textInputButton.addEventListener('click', () => {
-  textInput.value = '';
+  textInput.classList.add('fade-out');
+  textInput.addEventListener('transitionend', () => {
+    textInput.classList.remove('fade-out');
+    textInput.value = '';
+  });
 });
 
 // Login Form Handling
@@ -28,10 +32,19 @@ loginForm.addEventListener('submit', (event) => {
   const isAuthenticated = username === 'admin' && password === 'password';
 
   loginMessage.textContent = isAuthenticated ? "Login successful!" : "Invalid username or password.";
+  loginMessage.classList.add('shake'); // Add shake animation on error
+
+  setTimeout(() => {
+    loginMessage.classList.remove('shake');
+  }, 500); // Remove shake animation after 0.5 seconds
 });
 
-// Dropdown Menu Selection
+// Dropdown Menu Selection (with animation)
 dropdownButton.addEventListener('click', () => {
+  dropdownMenu.classList.add('slide-down');
+  dropdownMenu.addEventListener('transitionend', () => {
+    dropdownMenu.classList.remove('slide-down');
+  });
   dropdownMenu.value = 'option2'; // Select option 2
 });
 
@@ -80,8 +93,15 @@ setInterval(updateClock, 1000);
 
 // Progress Bar (Placeholder)
 updateProgressButton.addEventListener('click', () => {
-  // Update progress bar width here (e.g., progressBar.style.width = '50%')
-  console.log('Update progress logic (implementation needed)');
+  let progress = 0;
+  const intervalId = setInterval(() => {
+    progress += 5;
+    progressBar.style.width = `${progress}%`;
+    if (progress === 100) {
+      clearInterval(intervalId);
+    }
+  }, 100);
+  // Alternative: Use CSS animations for smoother progress bar updates
 });
 
 // Table Population (Placeholder)
