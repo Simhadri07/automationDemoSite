@@ -1,64 +1,121 @@
-/* General Styles */
 body {
   font-family: sans-serif;
-  margin: 0;
-  padding: 20px;
+  margin: 20px;
 }
 
-h1, h2, h3 {
-  margin: 10px 0;
+header {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-button {
-  padding: 10px 20px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  cursor: pointer;
+header h1 {
+  font-size: 2em;
 }
 
-button:hover {
-  background-color: #eee;
-}
-
-/* Form Styles */
-form {
+main {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-label {
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.element {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  width: calc(33% - 20px); /* Adjust for spacing between elements */
+}
+
+.element span {
+  font-weight: bold;
   display: block;
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="password"] {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+.element button {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.alert {
-  padding: 10px 20px;
+.element form {
   margin-bottom: 10px;
-  border: 1px solid transparent;
-  border-radius: 4px;
 }
 
-.alert-success {
+.element label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.element .progress-bar {
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.element .progress {
+  height: 100%;
+  background-color: #007bff;
+  transition: width 0.5s ease-in-out;
+}
+
+.element table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.element table th,
+.element table td {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: left;
+}
+
+/* Alerts (hidden by default) */
+.alert {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  z-index: 9999;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.alert.show {
+  opacity: 1;
+}
+
+.alert.success {
   background-color: #dff0d8;
-  border-color: #d0e9c6;
-  color: #3c763d;
+  color: #46b8da;
 }
 
-.alert-danger {
+.alert.error {
   background-color: #f2dede;
-  border-color: #e4b9b9;
   color: #a94442;
 }
 
-/* Animations */
+.alert.info {
+  background-color: #d7eefe;
+  color: #20c997;
+}
+
+.alert.warning {
+  background-color: #fcf8e3;
+  color: #8a6f4a;
+}
+
 .fade-out {
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
