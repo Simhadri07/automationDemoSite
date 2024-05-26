@@ -40,27 +40,49 @@ const agreeCheckbox = document.getElementById('agree');
 // You can use the checkbox state for your automation logic
 console.log('Agree checkbox checked:', agreeCheckbox.checked);
 
-const showAlertButton = document.getElementById('show-alert');
+const alertButtons = document.querySelectorAll('.alert-button');
 
-showAlertButton.addEventListener('click', function() {
-  alert('This is an alert message!');
+alertButtons.forEach(button => {
+  button.addEventListener('click', function() {
+    const alertType = this.dataset.alertType;
+    createAlert(alertType);
+  });
 });
 
-const fileUpload = document.getElementById('file-upload');
+function createAlert(type) {
+  const alert = document.createElement('div');
+  alert.classList.add('alert', type);
+  alert.textContent = `This is a ${type} alert!`;
 
-// You can access the selected file information here for automation
-fileUpload.addEventListener('change', function(event) {
-  const selectedFile = event.target.files[0];
-  console.log('Selected file:', selectedFile.name);
+  alert.addEventListener('transitionend', function() {
+    if (alert.classList.contains('show')) {
+      setTimeout(() => {
+        alert.parentNode.removeChild(alert);
+      }, 3000); // Hide alert after 3 seconds
+    }
+  });
+
+  document.body.appendChild(alert);
+  alert.classList.add('show');
+}
+
+// Clock functionality (update every second)
+function updateClock() {
+  const now = new Date();
+  const formattedTime = now.toLocaleTimeString();
+  document.getElementById('clock').textContent = formattedTime;
+}
+
+setInterval(updateClock, 1000);
+
+// Progress bar functionality (placeholder, update logic needed)
+const progressBar = document.getElementById('progress');
+const updateProgressButton = document.getElementById('update-progress');
+
+updateProgressButton.addEventListener('click', function() {
+  // Update progress bar width here (e.g., progressBar.style.width = '50%')
+  console.log('Update progress logic (implementation needed)');
 });
 
-// Captcha (Placeholder): Integration with a Captcha service is needed.
-const captchaPlaceholder = document.querySelector('.element-group:nth-child(9) p');
-
-// New Window (Placeholder): Consider using window.open() with appropriate options
-const openNewWindowButton = document.getElementById('open-new-window');
-
-openNewWindowButton.addEventListener('click', function() {
-  console.log('New window opening logic (implementation needed)');
-  // You can use window.open('https://www.example.com', '_blank'); to open a new window
-});
+// Table population (placeholder, add data dynamically)
+// You can use JavaScript or a library like DataTable to populate the table with data
