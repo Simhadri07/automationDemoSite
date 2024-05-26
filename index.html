@@ -3,74 +3,107 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UI Automation Practice</title>
-  <link rel="stylesheet" href="style.css"> </head>
+  <title>UI Automation Practice Site</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-  <h1>UI Automation Practice</h1>
+  <header>
+    <h1>UI Automation Practice</h1>
+  </header>
+  <main>
+    <div class="container">
+      <div class="element">
+        <span>Text Input:</span>
+        <input type="text" id="text-input" placeholder="Enter your text here">
+        <button data-target="text-input">Clear</button>
+      </div>
 
-  <section id="text-input-section">
-    <h2>Clear Text Input</h2>
-    <button data-target="text-input">Clear Text Input</button>
-    <input type="text" id="text-input" placeholder="Enter some text">
-  </section>
+      <div class="element">
+        <h3>Login Form</h3>
+        <form id="login-form">
+          <label for="username">Username:</label>
+          <input type="text" id="username" name="username" placeholder="Username">
+          <br>
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" placeholder="Password">
+          <br>
+          <label for="remember-me">
+            <input type="checkbox" id="remember-me" name="remember-me"> Remember me
+          </label>
+          <br>
+          <button type="submit">Login</button>
+        </form>
+        <div id="login-message"></div>
+      </div>
 
-  <section id="login-form-section">
-    <h2>Login Form</h2>
-    <form id="login-form">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" required>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required>
-      <button type="submit">Login</button>
-      <span id="login-message"></span>
-    </form>
-  </section>
+      <div class="element">
+        <span>Dropdown Menu:</span>
+        <select id="dropdown-menu">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+        <button data-target="dropdown-menu">Select Option 2</button>
+      </div>
 
-  <section id="dropdown-menu-section">
-    <h2>Dropdown Menu</h2>
-    <button data-target="dropdown-menu">Select Option</button>
-    <select id="dropdown-menu">
-      <option value="option1">Option 1</option>
-      <option value="option2">Option 2</option>
-      <option value="option3">Option 3</option>
-    </select>
-  </section>
+      <div class="element">
+        <span>Radio Buttons:</span>
+        <input type="radio" id="radio1" name="radio-group" value="radio1">
+        <label for="radio1">Radio Button 1</label><br>
+        <input type="radio" id="radio2" name="radio-group" value="radio2">
+        <label for="radio2">Radio Button 2</label>
+        <button data-target="radio-group">Select Radio 2</button>
+      </div>
 
-  <section id="radio-button-section">
-    <h2>Radio Buttons</h2>
-    <button data-target="radio-group">Select Radio Button 2</button>
-    <label for="radio1">Radio Button 1</label>
-    <input type="radio" id="radio1" name="radio-group" value="option1">
-    <label for="radio2">Radio Button 2</label>
-    <input type="radio" id="radio2" name="radio-group" value="option2">
-  </section>
+      <div class="element">
+        <span>Checkbox:</span>
+        <label for="agree">
+          <input type="checkbox" id="agree" name="agree"> I agree to terms and conditions
+        </label>
+      </div>
 
-  <section id="checkbox-section">
-    <h2>Checkbox</h2>
-    <label for="agree">Agree to terms</label>
-    <input type="checkbox" id="agree">
-  </section>
+      <div class="element">
+        <h3>Alerts:</h3>
+        <button class="alert-button" data-alert-type="success">Success Alert</button>
+        <button class="alert-button" data-alert-type="error">Error Alert</button>
+        <button class="alert-button" data-alert-type="info">Info Alert</button>
+        <button class="alert-button" data-alert-type="warning">Warning Alert</button>
+      </div>
 
-  <section id="alert-section">
-    <h2>Alerts</h2>
-    <button class="alert-button" data-alert-type="success">Show Success Alert</button>
-    <button class="alert-button" data-alert-type="danger">Show Danger Alert</button>
-  </section>
+      <div class="element">
+        <h3>Clock:</h3>
+        <span id="clock"></span>
+      </div>
 
-  <section id="clock-section">
-    <h2>Clock</h2>
-    <span id="clock"></span>
-  </section>
+      <div class="element">
+        <h3>Date Picker (Placeholder):</h3>
+        <p>Date picker integration example coming soon!</p>
+      </div>
 
-  <section id="progress-bar-section">
-    <h2>Progress Bar</h2>
-    <div id="progress"></div>
-    <button id="update-progress">Update Progress</button>
-  </section>
+      <div class="element">
+        <h3>Progress Bar:</h3>
+        <div class="progress-bar">
+          <div class="progress" id="progress"></div>
+        </div>
+        <button id="update-progress">Update Progress</button>
+      </div>
 
-  <section id="table-section">
-    <h2>Table (Placeholder)</h2>
-    </section>
-
-  <script src="script.js"></script> </body>
+      <div class="element">
+        <h3>Table:</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>City</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
 </html>
