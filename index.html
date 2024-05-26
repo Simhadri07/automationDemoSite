@@ -1,13 +1,10 @@
-To make the website responsive and work well on both mobile and desktop devices, you can add some CSS to adjust the layout based on the screen size. I'll update the existing code with some basic responsive CSS styles:
-
-```html
-
-
-
-
-
-Interactive Website
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Website</title>
+<style>
     /* CSS for colorful UI */
     body {
         font-family: Arial, sans-serif;
@@ -41,46 +38,46 @@ Interactive Website
             max-width: 600px;
         }
     }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Interactive Elements</h1>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+        <br>
+        <label for="color">Favorite Color:</label>
+        <select id="color" name="color">
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+        </select>
+        <br>
+        <label for="interests">Interests:</label>
+        <select id="interests" name="interests" multiple>
+            <option value="music">Music</option>
+            <option value="sports">Sports</option>
+            <option value="travel">Travel</option>
+        </select>
+        <br>
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+        <br>
+        <input type="checkbox" id="agree" name="agree" required>
+        <label for="agree">I agree to the terms and conditions</label>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+</div>
 
-
-
-
-    Interactive Elements
-    
-        Name:
-        
-        
-        Email:
-        
-        
-        Phone Number:
-        
-        
-        Favorite Color:
-        
-            Red
-            Green
-            Blue
-        
-        
-        Interests:
-        
-            Music
-            Sports
-            Travel
-        
-        
-        Comments:
-        
-        
-        
-        I agree to the terms and conditions
-        
-        Submit
-    
-
-
-
+<script>
     // JavaScript for interactivity
     document.querySelector('form').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -93,9 +90,6 @@ Interactive Website
         const agree = document.getElementById('agree').checked ? 'Agreed' : 'Not Agreed';
         alert(`Name: ${name}\nEmail: ${email}\nPhone Number: ${phone}\nFavorite Color: ${color}\nInterests: ${interests.join(', ')}\nComments: ${comments}\nTerms and Conditions: ${agree}`);
     });
-
-
-
-```
-
-This updated code includes some basic responsive CSS that adjusts the container width on screens larger than 768px. You can further enhance the responsiveness based on your requirements. Feel free to test this code on both mobile and desktop devices and let me know if you need any more assistance!
+</script>
+</body>
+</html>
