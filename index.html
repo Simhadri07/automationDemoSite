@@ -1,95 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interactive Website</title>
-<style>
-    /* CSS for colorful UI */
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        margin: 0;
-        padding: 0;
-    }
-    .container {
-        max-width: 800px;
-        margin: 50px auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    button, input, select, textarea {
-        padding: 10px;
-        margin: 5px;
-        border: none;
-        border-radius: 5px;
-        background-color: #3498db;
-        color: #fff;
-        cursor: pointer;
-        width: 100%;
-    }
-    button:hover, input:hover, select:hover, textarea:hover {
-        background-color: #2980b9;
-    }
-    @media (min-width: 768px) {
-        .container {
-            max-width: 600px;
-        }
-    }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UI Automation Practice Site</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="container">
-    <h1>Interactive Elements</h1>
-    <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
+  <header>
+    <h1>UI Automation Practice</h1>
+  </header>
+  <main>
+    <div class="form-container">
+      <h2>Interactive Form</h2>
+      <form id="user-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
         <br>
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="Enter your email address">
         <br>
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
-        <br>
-        <label for="color">Favorite Color:</label>
-        <select id="color" name="color">
-            <option value="red">Red</option>
-            <option value="green">Green</option>
-            <option value="blue">Blue</option>
-        </select>
-        <br>
-        <label for="interests">Interests:</label>
-        <select id="interests" name="interests" multiple>
-            <option value="music">Music</option>
-            <option value="sports">Sports</option>
-            <option value="travel">Travel</option>
-        </select>
-        <br>
-        <label for="comments">Comments:</label>
-        <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
-        <br>
-        <input type="checkbox" id="agree" name="agree" required>
-        <label for="agree">I agree to the terms and conditions</label>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" placeholder="Write a message"></textarea>
         <br>
         <button type="submit">Submit</button>
-    </form>
-</div>
-
-<script>
-    // JavaScript for interactivity
-    document.querySelector('form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const color = document.getElementById('color').value;
-        const interests = Array.from(document.getElementById('interests').selectedOptions).map(option => option.value);
-        const comments = document.getElementById('comments').value;
-        const agree = document.getElementById('agree').checked ? 'Agreed' : 'Not Agreed';
-        alert(`Name: ${name}\nEmail: ${email}\nPhone Number: ${phone}\nFavorite Color: ${color}\nInterests: ${interests.join(', ')}\nComments: ${comments}\nTerms and Conditions: ${agree}`);
-    });
-</script>
+      </form>
+      <div id="response"></div>
+    </div>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
