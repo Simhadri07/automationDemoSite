@@ -1,117 +1,84 @@
+/* General Styles */
 body {
   font-family: sans-serif;
-  margin: 20px;
+  margin: 0;
+  padding: 20px;
 }
 
-header {
-  text-align: center;
-  margin-bottom: 20px;
+h1, h2, h3 {
+  margin: 10px 0;
 }
 
-header h1 {
-  font-size: 2em;
-}
-
-main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.element {
-  margin-bottom: 20px;
+button {
+  padding: 10px 20px;
   border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 5px;
-  width: calc(33% - 20px); /* Adjust for spacing between elements */
-}
-
-.element span {
-  font-weight: bold;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.element button {
-  padding: 5px 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
 }
 
-.element form {
-  margin-bottom: 10px;
+button:hover {
+  background-color: #eee;
 }
 
-.element label {
+/* Form Styles */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
   display: block;
   margin-bottom: 5px;
 }
 
-.element .progress-bar {
-  height: 10px;
-  background-color: #ddd;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.element .progress {
-  height: 100%;
-  background-color: #007bff;
-  transition: width 0.5s ease-in-out;
-}
-
-.element table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.element table th,
-.element table td {
-  border: 1px solid #ddd;
+input[type="text"],
+input[type="password"] {
   padding: 5px;
-  text-align: left;
+  border: 1px solid #ccc;
+  border-radius: 3px;
 }
 
-/* Alerts (hidden by default) */
 .alert {
-  position: fixed;
-  top: 10px;
-  right: 10px;
   padding: 10px 20px;
-  border-radius: 5px;
-  z-index: 9999;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  margin-bottom: 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
 
-.alert.show {
-  opacity: 1;
-}
-
-.alert.success {
+.alert-success {
   background-color: #dff0d8;
-  color: #46b8da;
+  border-color: #d0e9c6;
+  color: #3c763d;
 }
 
-.alert.error {
+.alert-danger {
   background-color: #f2dede;
+  border-color: #e4b9b9;
   color: #a94442;
 }
 
-.alert.info {
-  background-color: #d7eefe;
-  color: #20c997;
+/* Animations */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
-.alert.warning {
-  background-color: #fcf8e3;
-  color: #8a6f4a;
+.shake {
+  animation: shake 0.5s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-5px); }
+  40%, 80% { transform: translateX(10px); }
+}
+
+.slide-down {
+  animation: slide-down 0.3s ease-in-out;
+}
+
+@keyframes slide-down {
+  0% { transform: translateY(-10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
 }
