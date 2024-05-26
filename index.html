@@ -3,32 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automation Demo</title>
+    <title>Automation Demo Site - Made by simhadri07</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #f9f9f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #f5f5f5;
+            color: #333;
         }
         .container {
-            max-width: 600px;
+            max-width: 800px;
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             padding: 30px;
             box-sizing: border-box;
-            position: relative;
+            margin: 0 auto;
         }
         h1 {
             text-align: center;
-            color: #333;
             margin-bottom: 30px;
+            color: #007bff;
+            text-transform: uppercase;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #007bff;
+            text-transform: uppercase;
         }
         label {
             display: block;
@@ -43,13 +50,14 @@
         input[type="submit"],
         input[type="reset"],
         button {
-            width: 100%;
+            width: calc(100% - 20px);
             padding: 10px;
             margin-bottom: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
             box-sizing: border-box;
             transition: border-color 0.3s ease;
+            font-size: 16px;
         }
         input[type="text"]:focus,
         input[type="password"]:focus,
@@ -87,132 +95,133 @@
             margin-right: 5px;
             vertical-align: middle;
         }
-        .submit-icon {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+        .submit-icon,
         .reset-icon {
             position: absolute;
             right: 10px;
             top: 50%;
             transform: translateY(-50%);
         }
+
+        /* Popup Styles */
+        #popupWindow {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+        }
+        .popup-content {
+            background-color: #fff;
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .popup-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+            color: #007bff;
+        }
+        .popup-btn {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .popup-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            input[type="text"],
+            input[type="password"],
+            select,
+            textarea,
+            input[type="submit"],
+            input[type="reset"],
+            button {
+                width: 100%;
+            }
+            .submit-icon,
+            .reset-icon {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Automation Demo Web UI</h1>
+        <h1>Automation Demo Site</h1>
 
-        <label for="txtUsername">Username:</label>
-        <input type="text" id="txtUsername" placeholder="Enter your username">
+        <div class="section">
+            <h2 class="section-title">General Information</h2>
+            <label for="txtUsername">Username:</label>
+            <input type="text" id="txtUsername" placeholder="Enter your username">
 
-        <label for="txtPassword">Password:</label>
-        <input type="password" id="txtPassword" placeholder="Enter your password">
+            <label for="txtPassword">Password:</label>
+            <input type="password" id="txtPassword" placeholder="Enter your password">
 
-        <label for="ddlOptions">Options:</label>
-        <select id="ddlOptions">
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
-        </select>
-
-        <input type="checkbox" id="chkOption1">
-        <label for="chkOption1">Option 1</label>
-
-        <div>
-            <input type="radio" name="gender" id="radMale" value="male">
-            <label for="radMale">Male</label>
-            
-            <input type="radio" name="gender" id="radFemale" value="female">
-            <label for="radFemale">Female</label>
+            <label for="ddlOptions">Options:</label>
+            <select id="ddlOptions">
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+                <option value="option3">Option 3</option>
+            </select>
         </div>
 
-        <button type="submit" id="submitBtn"><span class="material-icons icon submit-icon">send</span>Submit</button>
+        <div class="section">
+            <h2 class="section-title">Media Uploads</h2>
+            <label for="imgUpload">Image:</label>
+            <input type="file" id="imgUpload" accept="image/*">
+
+            <label for="audioUpload">Audio:</label>
+            <input type="file" id="audioUpload" accept="audio/*">
+
+            <label for="videoUpload">Video:</label>
+            <input type="file" id="videoUpload" accept="video/*">
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Additional Information</h2>
+            <label for="txtArea">Comments:</label>
+            <textarea id="txtArea" rows="4" cols="50" placeholder="Enter your comments"></textarea>
+
+            <label for="emailInput">Email:</label>
+            <input type="email" id="emailInput" placeholder="example@example.com">
+        </div>
+
+        <button type="submit" id="submitBtn" onclick="openPopup()"><span class="material-icons icon submit-icon">send</span>Submit</button>
 
         <input type="reset" id="resetBtn" value="Reset"><span class="material-icons icon reset-icon">refresh</span>
-
-        <a href="https://example.com" id="anchorLink">Example Link</a>
-
-        <img src="https://via.placeholder.com/150" alt="Placeholder Image" id="placeholderImg">
-
-        <label for="txtArea">Comments:</label>
-        <textarea id="txtArea" rows="4" cols="50" placeholder="Enter your comments"></textarea>
-
-        <input type="checkbox" id="chkOption2">
-        <label for="chkOption2">Option 2</label>
-        
-        <input type="checkbox" id="chkOption3">
-        <label for="chkOption3">Option 3</label>
-
-        <div>
-            <input type="radio" name="gender" id="radOther" value="other">
-            <label for="radOther">Other</label>
-        </div>
-
-        <label for="rangeInput">Progress:</label>
-        <input type="range" id="rangeInput" min="0" max="100" value="50">
-
-        <label for="colorInput">Color:</label>
-        <input type="color" id="colorInput" value="#ff0000">
-
-        <label for="dateInput">Date:</label>
-        <input type="date" id="dateInput">
-
-        <label for="timeInput">Time:</label>
-        <input type="time" id="timeInput">
-
-        <label for="emailInput">Email:</label>
-        <input type="email" id="emailInput" placeholder="example@example.com">
-
-        <label for="urlInput">URL:</label>
-        <input type="url" id="urlInput" placeholder="https://example.com">
-
-        <label for="numberInput">Number:</label>
-        <input type="number" id="numberInput" min="0" max="100" step="1" value="50">
-
-        <label for="fileInput">File:</label>
-        <input type="file" id="fileInput">
-
-        <input type="hidden" id="hiddenInput" value="hidden_value">
-
-        <label for="diskSpace">Disk Space:</label>
-        <meter id="diskSpace" value="75" min="0" max="100">75%</meter>
-
-        <label for="fileProgress">File Progress:</label>
-        <progress id="fileProgress" value="50" max="100">50%</progress>
-
-        <label for="rangeInput">Output:</label>
-        <output for="rangeInput" id="output">50</output>
-
-        <details>
-            <summary>Details</summary>
-            <p>This is a details element</p>
-        </details>
-
-        <fieldset>
-            <legend>Fieldset</legend>
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name"><br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email"><br><br>
-        </fieldset>
-
-        <iframe src="https://www.example.com" id="iframe"></iframe>
-
-        <audio controls id="audioPlayer">
-            <source src="audio.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-
-        <video controls id="videoPlayer">
-            <source src="video.mp4" type="video/mp4">
-            Your browser does not support the video element.
-        </video>
     </div>
+
+    <!-- Popup Window -->
+    <div id="popupWindow">
+        <div class="popup-content">
+            <h2 class="popup-title">Popup Window</h2>
+            <p style="text-align: center;">This is a popup window. You can handle it with Selenium.</p>
+            <button class="popup-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function openPopup() {
+            document.getElementById("popupWindow").style.display = "block";
+        }
+
+        function closePopup() {
+            document.getElementById("popupWindow").style.display = "none";
+        }
+    </script>
 </body>
 </html>
-
-
-
