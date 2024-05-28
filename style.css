@@ -1,49 +1,46 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+/* Font Awesome Icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
+
 body {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 20px;
 }
 
 header {
   text-align: center;
   margin-bottom: 20px;
+  color: #4caf50;
 }
 
 header h1 {
-  font-size: 2em;
-}
-
-main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  font-size: 2.5em;
 }
 
 .container {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
 }
 
 .element {
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 5px;
-  width: calc(33% - 20px); /* Adjust for spacing between elements */
+  border: 1px solid #4caf50;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.element h3 {
+  margin-bottom: 10px;
+  color: #4caf50;
 }
 
 .element span {
   font-weight: bold;
   display: block;
-  margin-bottom: 5px;
-}
-
-.element button {
-  padding: 5px 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .element form {
@@ -55,6 +52,11 @@ main {
   margin-bottom: 5px;
 }
 
+.element input[type="checkbox"],
+.element input[type="radio"] {
+  margin-right: 5px;
+}
+
 .element .progress-bar {
   height: 10px;
   background-color: #ddd;
@@ -64,7 +66,7 @@ main {
 
 .element .progress {
   height: 100%;
-  background-color: #007bff;
+  background-color: #ff4800;
   transition: width 0.5s ease-in-out;
 }
 
@@ -75,12 +77,71 @@ main {
 
 .element table th,
 .element table td {
-  border: 1px solid #ddd;
-  padding: 5px;
+  border: 1px solid #4caf50;
+  padding: 10px;
   text-align: left;
 }
 
-/* Alerts (hidden by default) */
+.element table th {
+  background-color: #4caf50;
+  color: white;
+}
+
+.element button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px; /* Add margin to separate buttons */
+}
+
+.element button:hover {
+  background-color: #388e3c;
+}
+
+.element button:active {
+  background-color: #2e7d32;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+}
+
 .alert {
   position: fixed;
   top: 10px;
@@ -97,23 +158,23 @@ main {
 }
 
 .alert.success {
-  background-color: #dff0d8;
-  color: #46b8da;
+  background-color: #d4edda;
+  color: #155724;
 }
 
 .alert.error {
-  background-color: #f2dede;
-  color: #a94442;
+  background-color: #f8d7da;
+  color: #721c24;
 }
 
 .alert.info {
-  background-color: #d7eefe;
-  color: #20c997;
+  background-color: #d1ecf1;
+  color: #0c5460;
 }
 
 .alert.warning {
-  background-color: #fcf8e3;
-  color: #8a6f4a;
+  background-color: #fff3cd;
+  color: #856404;
 }
 
 .fade-out {
@@ -141,14 +202,130 @@ main {
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
-    background: transparent;
-    bottom: 0;
-    color: transparent;
-    cursor: pointer;
-    height: auto;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: auto;
+  background: transparent;
+  bottom: 0;
+  color: transparent;
+  cursor: pointer;
+  height: auto;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: auto;
 }
+
+/* Input fields */
+input[type="text"],
+input[type="password"],
+input[type="date"],
+select {
+  width: calc(100% - 22px); /* Adjust for padding */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* Radio buttons */
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+/* Dropdowns */
+select {
+  width: calc(100% - 22px); /* Adjust for padding */
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fff; /* Add background color */
+  appearance: none; /* Remove default arrow */
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='5' viewBox='0 0 10 5' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0l5 5 5-5H0z' fill='%234caf50' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px top 50%;
+  background-size: 10px 5px;
+}
+
+:root {
+  --primary-color: #4caf50; /* Default primary color */
+}
+
+/* Use CSS variables */
+header {
+  color: var(--primary-color);
+}
+
+.element {
+  border: 1px solid var(--primary-color);
+}
+
+.element h3 {
+  color: var(--primary-color);
+}
+
+.element button,
+.color-option {
+  background-color: var(--primary-color);
+}
+
+/* Add other styles as needed */
+/* Add styles for color options */
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 5%;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 2px solid #fff; /* Add border to make color options visible */
+}
+
+/* Add styles for color options */
+.color-option-container {
+  display: flex;
+  align-items: center;
+}
+
+.color-option {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 2px solid #fff; /* Add border to make color options visible */
+}
+
+/* Add spacing between color options */
+.color-option + .color-option {
+  margin-left: 2px;
+}
+
+/* Apply color theme to table headings */
+.element table thead th {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+/* Apply color theme to table cells */
+.element table tbody th,
+.element table tbody td {
+  border: 1px solid var(--primary-color);
+}
+
+/* Update button color */
+.color-option[data-color="#4caf50"] { /* Green */
+  background-color: #4caf50;
+}
+
+.color-option[data-color="#ff9800"] { /* Orange */
+  background-color: #ff9800;
+}
+
+.color-option[data-color="#2196f3"] { /* Blue */
+  background-color: #2196f3;
+}
+
+.color-option[data-color="#e91e63"] { /* Pink */
+  background-color: #e91e63;
+}
+

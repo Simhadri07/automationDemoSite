@@ -5,7 +5,7 @@ const loginForm = document.getElementById('login-form');
 const loginMessage = document.getElementById('login-message');
 const dropdownMenu = document.getElementById('dropdown-menu');
 const dropdownButton = document.querySelector('[data-target="dropdown-menu"]');
-const radioButtons = document.querySelectorAll('input[type="radio"][name="radio-group"]'); // More specific radio selection
+const radioButtons = document.querySelectorAll('input[type="radio"][name="radio-group"]');
 const radioButtonGroup = document.querySelector('[data-target="radio-group"]');
 const agreeCheckbox = document.getElementById('agree');
 const alertButtons = document.querySelectorAll('.alert-button');
@@ -82,6 +82,29 @@ function createAlert(type) {
   alert.classList.add('show');
 }
 
+// Popup
+document.getElementById("openPopup").onclick = function() {
+  document.getElementById("popup").style.display = "block";
+};
+
+document.getElementById("closePopup").onclick = function() {
+  document.getElementById("popup").style.display = "none";
+};
+
+window.onclick = function(event) {
+  if (event.target == document.getElementById("popup")) {
+    document.getElementById("popup").style.display = "none";
+  }
+};
+
+document.querySelectorAll('.color-option').forEach(option => {
+  option.addEventListener('click', () => {
+    const color = option.dataset.color;
+    document.documentElement.style.setProperty('--primary-color', color);
+  });
+});
+
+
 // Clock Update
 function updateClock() {
   const now = new Date();
@@ -105,4 +128,4 @@ updateProgressButton.addEventListener('click', () => {
 });
 
 // Table Population (Placeholder)
-// You can use JavaScript or a library like DataTable to populate the table with data
+// You can use JavaScript or a library like DataTables to populate the table with data

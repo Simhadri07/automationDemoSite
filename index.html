@@ -13,7 +13,7 @@
   <main>
     <div class="container">
       <div class="element">
-        <span>Text Input:</span>
+        <h3>Text Input:</h3>
         <input type="text" id="text-input" placeholder="Enter your text here">
         <button data-target="text-input">Clear</button>
       </div>
@@ -37,28 +37,34 @@
       </div>
 
       <div class="element">
-        <span>Dropdown Menu:</span>
+        <h3>Dropdown Menu:</h3>
         <select id="dropdown-menu">
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
+          <option value="option1">Option 1 - Alpha</option>
+          <option value="option2">Option 2 - Beta</option>
+          <option value="option3">Option 3 - Gamma</option>
         </select>
         <button data-target="dropdown-menu">Select Option 2</button>
       </div>
 
       <div class="element">
-        <span>Radio Buttons:</span>
+        <h3>Radio Buttons:</h3>
         <input type="radio" id="radio1" name="radio-group" value="radio1">
-        <label for="radio1">Radio Button 1</label><br>
+        <label for="radio1">Radio Button 1 - Apple</label><br>
         <input type="radio" id="radio2" name="radio-group" value="radio2">
-        <label for="radio2">Radio Button 2</label>
+        <label for="radio2">Radio Button 2 - Banana</label>
         <button data-target="radio-group">Select Radio 2</button>
       </div>
 
       <div class="element">
-        <span>Checkbox:</span>
+        <h3>Checkbox:</h3>
         <label for="agree">
           <input type="checkbox" id="agree" name="agree"> I agree to terms and conditions
+        </label><br>
+        <label for="newsletter">
+          <input type="checkbox" id="newsletter" name="newsletter"> Subscribe to newsletter
+        </label><br>
+        <label for="updates">
+          <input type="checkbox" id="updates" name="updates"> Receive updates
         </label>
       </div>
 
@@ -72,20 +78,35 @@
 
       <div class="element">
         <h3>Clock:</h3>
-        <span id="clock"></span>
+        <span id="clock">Current Date and Time: <script>document.getElementById('clock').innerHTML = new Date().toLocaleString();</script></span>
       </div>
 
       <div class="element">
-        <h3>Date Picker (Placeholder):</h3>
-        <input type="date" id="date">
+        <h3>Date Picker:</h3>
+        <label for="date">Birthday:</label>
+        <input type="date" id="date" onchange="updateClock()">
       </div>
 
       <div class="element">
-        <h3>Progress Bar:</h3>
-        <div class="progress-bar">
-          <div class="progress" id="progress"></div>
+        <h3>Popup:</h3>
+        <button id="openPopup">Open Popup</button>
+        <div id="popup" class="popup">
+          <div class="popup-content">
+            <span class="close" id="closePopup">&times;</span>
+            <p>This is a popup!</p>
+          </div>
         </div>
-        <button id="update-progress">Update Progress</button>
+      </div>
+
+      <div class="element">
+        <h3>Visible Text:</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum quibusdam ex voluptatem. Ipsa consequuntur eum suscipit! Aliquid quaerat aut eius nostrum incidunt, sequi voluptatibus nihil error, quam illo ullam sint!</p>
+      </div>
+
+      <div class="element">
+        <h3>Random Number Generator:</h3>
+        <button id="generate-random">Generate Random Number</button>
+        <p id="random-number"></p>
       </div>
 
       <div class="element">
@@ -97,23 +118,37 @@
               <th>Age</th>
               <th>City</th>
             </tr>
-            <tr>
-              <th>Chingu</th>
-              <th>25</th>
-              <th>hyderabad</th>
-            </tr>
-            <tr>
-              <th>simba</th>
-              <th>16</th>
-              <th>Canada</th>
-            </tr>
           </thead>
           <tbody>
+            <tr>
+              <td>Chingu</td>
+              <td>25</td>
+              <td>Hyderabad</td>
+            </tr>
+            <tr>
+              <td>Simba</td>
+              <td>16</td>
+              <td>Canada</td>
+            </tr>
           </tbody>
         </table>
       </div>
+
+      <div class="element color-theme">
+        <h3>Color Theme</h3>
+        <div class="color-option" data-color="#4caf50"></div>
+        <div class="color-option" data-color="#ff9800"></div>
+        <div class="color-option" data-color="#2196f3"></div>
+        <div class="color-option" data-color="#e91e63"></div>
+      </div>
+      
     </div>
   </main>
   <script src="script.js"></script>
+  <script>
+    function updateClock() {
+      document.getElementById('clock').innerHTML = "Current Date and Time: " + new Date().toLocaleString();
+    }
+  </script>
 </body>
 </html>
