@@ -104,6 +104,10 @@ document.querySelectorAll('.color-option').forEach(option => {
   });
 });
 
+  document.getElementById('generate-random').addEventListener('click', function() {
+    const randomNumber = Math.floor(Math.random() * 1000000000) + 1;
+    document.getElementById('result').textContent = `Random Number: ${randomNumber}`;
+    });
 
 // Clock Update
 function updateClock() {
@@ -129,3 +133,21 @@ updateProgressButton.addEventListener('click', () => {
 
 // Table Population (Placeholder)
 // You can use JavaScript or a library like DataTables to populate the table with data
+
+
+
+// // Function to generate a random number between min and max
+// function generateRandomNumber(min, max) {
+//   return Math.floor(Math.random() * (max - min + 1) + min);
+// }
+
+// // Function to display the random number in the result div
+// function displayRandomNumber() {
+//   const min = 1; // Minimum value for random number
+//   const max = 100; // Maximum value for random number
+//   const randomNumber = generateRandomNumber(min, max); // Generate random number
+//   document.getElementById('result').textContent = `Random Number: ${randomNumber}`; // Display random number
+// }
+
+// // Event listener for the generate number button click
+// document.getElementById('generate-random').addEventListener('click', displayRandomNumber);

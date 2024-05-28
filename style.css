@@ -247,6 +247,16 @@ select {
   background-size: 10px 5px;
 }
 
+#result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333; /* Text color */
+  font-weight: bold; /* Make the text bold */
+  padding: 10px; /* Add padding around the text */
+  background-color: #f0f0f0; /* Background color */
+}
+
+
 :root {
   --primary-color: #4caf50; /* Default primary color */
 }
@@ -261,6 +271,10 @@ header {
 }
 
 .element h3 {
+  color: var(--primary-color);
+}
+
+.element result {
   color: var(--primary-color);
 }
 
@@ -329,3 +343,17 @@ header {
   background-color: #e91e63;
 }
 
+.footer {
+  background-color: #f2f2f2;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-content {
+  font-size: 14px;
+  color: #555;
+}
+
+.footer-content p {
+  margin: 5px 0;
+}
