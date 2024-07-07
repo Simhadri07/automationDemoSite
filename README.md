@@ -1,2 +1,2 @@
-# studious-octo-fortnight
+# automationDemoSite
 Automation Practice Site
