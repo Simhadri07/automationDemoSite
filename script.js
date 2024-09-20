@@ -29,7 +29,7 @@ loginForm.addEventListener('submit', (event) => {
   // Replace with your actual validation/login logic
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
-  const isAuthenticated = username === 'admin' && password === 'password';
+  const isAuthenticated = username === 'superUser' && password === 'superUser';
 
   loginMessage.textContent = isAuthenticated ? "Login successful!" : "Invalid username or password.";
   loginMessage.classList.add('shake'); // Add shake animation on error
@@ -128,26 +128,5 @@ updateProgressButton.addEventListener('click', () => {
       clearInterval(intervalId);
     }
   }, 100);
-  // Alternative: Use CSS animations for smoother progress bar updates
+
 });
-
-// Table Population (Placeholder)
-// You can use JavaScript or a library like DataTables to populate the table with data
-
-
-
-// // Function to generate a random number between min and max
-// function generateRandomNumber(min, max) {
-//   return Math.floor(Math.random() * (max - min + 1) + min);
-// }
-
-// // Function to display the random number in the result div
-// function displayRandomNumber() {
-//   const min = 1; // Minimum value for random number
-//   const max = 100; // Maximum value for random number
-//   const randomNumber = generateRandomNumber(min, max); // Generate random number
-//   document.getElementById('result').textContent = `Random Number: ${randomNumber}`; // Display random number
-// }
-
-// // Event listener for the generate number button click
-// document.getElementById('generate-random').addEventListener('click', displayRandomNumber);
